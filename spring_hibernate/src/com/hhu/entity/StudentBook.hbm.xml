@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <!--指明实体类和数据库中表的对应关系-->
+    <class name="com.hhu.entity.StudentBook" table="STUDENTBOOK">
+        <!--设置主键，name表示实体类Bean的属性名-->
+        <id name="id" type="java.lang.Integer">
+            <!--指定数据表中的列名-->
+            <column name="ID"/>
+            <!--指定生成策略,native表示用数据库本地生成策略方式-->
+            <generator class="native"/>
+        </id>
+
+        <!--设置普通字段的属性对应关系-->
+        <property name="bookName" type="java.lang.String">
+            <column name="BOOKNAME"/>
+        </property>
+
+        <property name="isbn" type="java.lang.String">
+            <column name="ISBN"/>
+        </property>
+
+        <property name="price" type="int">
+            <column name="PRICE"/>
+        </property>
+
+        <property name="stock" type="int">
+            <column name="STOCK"/>
+        </property>
+
+    </class>
+</hibernate-mapping>

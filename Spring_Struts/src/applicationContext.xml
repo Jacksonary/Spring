@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="person" class="com.hhu.entities.Person">
+        <property name="name" value="Spring_Struts2"/>
+    </bean>
+
+    <!--注意原来的Struts2中的Action不是单例的，而Spring中配置Bean默认是单例的，所以这里要将默认的单例改为原型的-->
+    <bean id="personAction" class="com.hhu.actions.PersonAction" scope="prototype">
+        <property name="personService" ref="personService"/>
+    </bean>
+
+    <bean id="personService" class="com.hhu.services.PersonService">
+
+    </bean>
+</beans>

@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <!--注意这里的每个属性前面都是有hibernate的前缀的，在这不写可以，但是在和Spring的时候一定要写这个前缀-->
+        <property name="connection.username">root</property>
+        <property name="connection.password">921228jack</property>
+        <property name="connection.url">jdbc:mysql://localhost:3306/db_studentinfo</property>
+        <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+
+        <!--配置hibernate的基本信息-->
+        <!--<property name="dialect">org.hibernate.dialect.MySQLInnoDBDialect</property>-->
+        <property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>
+
+        <!--执行是否在控制台打印SQL-->
+        <property name="show_sql">true</property>
+        <!--是否对SQL进行格式化-->
+        <property name="format_sql">true</property>
+        <!-- 指定生成数据表的策略 -->
+         <property name="hbm2ddl.auto">create</property>
+
+        <!--加入关联的映射文件*.hbm.xml，注意这里使用的是目录结构，而不是包名结构-->
+        <mapping resource="com/hhu/hibernate/Hibernate.hbm.xml"/>
+    </session-factory>
+</hibernate-configuration>

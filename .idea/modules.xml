@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/FrameStudy.iml" filepath="$PROJECT_DIR$/FrameStudy.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Hibernate_2/Hibernate_2.iml" filepath="$PROJECT_DIR$/Hibernate_2/Hibernate_2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringWEB/SpringWEB.iml" filepath="$PROJECT_DIR$/SpringWEB/SpringWEB.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Spring_7/Spring_7.iml" filepath="$PROJECT_DIR$/Spring_7/Spring_7.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Spring_Struts/Spring_Struts.iml" filepath="$PROJECT_DIR$/Spring_Struts/Spring_Struts.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hibernate_1/hibernate_1.iml" filepath="$PROJECT_DIR$/hibernate_1/hibernate_1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-1/spring-1.iml" filepath="$PROJECT_DIR$/spring-1/spring-1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-2/spring-2.iml" filepath="$PROJECT_DIR$/spring-2/spring-2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring_hibernate/spring_hibernate.iml" filepath="$PROJECT_DIR$/spring_hibernate/spring_hibernate.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springjdbc/springjdbc.iml" filepath="$PROJECT_DIR$/springjdbc/springjdbc.iml" />
+    </modules>
+  </component>
+</project>

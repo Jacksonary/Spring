@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.hhu.n21.Order" table="ORDERS">
+        <id name="OId" type="int">
+            <column name="OID"/>
+            <generator class="native"/>
+        </id>
+        <property name="OName" type="string">
+            <column name="ONAME"/>
+        </property>
+
+        <!--映射多对一的关联关系,其中name就是指的多方里面对一方的引用，在数据库的表中实际上就是创建一个外键
+        去关联CustomrID的外键去关联Customer这个表
+        name:多端关联一端的属性名，即customer
+        class:一端对应的类名
+        column:多端在一端表中对应的关联外键
+        -->
+        <many-to-one name="customer" class="com.hhu.n21.Customer" column="CUSTOMER_ID"/>
+    </class>
+</hibernate-mapping>

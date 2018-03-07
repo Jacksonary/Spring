@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+    <constant name="struts.enable.DynamicMethodInvocation" value="false"/>
+    <constant name="struts.devMode" value="true"/>
+
+    <package name="default" namespace="/" extends="struts-default">
+        <!--以前只用Struts的时候，每次都是自己创建，class属性直接写为com.hhu.services.PersonService，
+        现在需要从IOC中获取，这里就是直接指向在Spring配置文件中配置的Bean的id-->
+        <action name="person-save" class="personAction">
+            <result>/success.jsp</result>
+        </action>
+    </package>
+
+</struts>

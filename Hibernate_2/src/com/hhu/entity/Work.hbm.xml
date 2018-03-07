@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.hhu.entity.Work" table="WORK">
+        <id name="id" type="int">
+            <column name="ID"/>
+            <generator class="native"/>
+        </id>
+        <property name="name" type="string">
+            <column name="NAME"/>
+        </property>
+
+        <!--映射组成关系-->
+        <component name="pay" class="com.hhu.entity.Pay">
+            <!--指定组成关系-->
+            <property name="monthPay" type="int">
+                <column name="MONTHPAY"/>
+            </property>
+            <property name="yearPay" type="int">
+                <column name="YEARPAY"/>
+            </property>
+            <property name="restPay" type="int">
+                <column name="RESTPAY"/>
+            </property>
+        </component>
+
+    </class>
+</hibernate-mapping>

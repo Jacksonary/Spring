@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <!--指明实体类和数据库中表的对应关系-->
+    <class name="com.hhu.hibernate.Hibernate" table="HIBERNATE">
+        <!--设置主键，name表示实体类Bean的属性名-->
+        <id name="id" type="java.lang.Integer">
+            <!--指定数据表中的列名-->
+            <column name="ID"/>
+            <!--指定生成策略,native表示用数据库本地生成策略方式-->
+            <generator class="native"/>
+        </id>
+        <!--设置普通字段的属性对应关系-->
+        <property name="name" type="java.lang.String">
+            <column name="NAME"/>
+        </property>
+        <property name="version" type="java.lang.String">
+            <column name="VERSION"/>
+        </property>
+        <property name="date" type="time">
+            <column name="DATE"/>
+        </property>
+    </class>
+</hibernate-mapping>

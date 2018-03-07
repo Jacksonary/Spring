@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+    <!--配置bean，利用反射的方式由Spring创建这个Bean-->
+    <bean id="helloWorld" class="com.hhu.spring.beans.HelloWorld">
+        <!--这里为属性赋值是调用bean中的setter(注意setter的方法名)，所以在定义bean的时候要给定setter方法-->
+        <property name="firstName" value="HHU"></property>
+        <property name="car" ref="car"></property>
+        <property name="cars">
+            <list>
+                <ref bean="car"/>
+                <ref bean="car2"/>
+            </list>
+        </property>
+        <property name="map">
+            <map>
+                <entry key="1" value="one"></entry>
+                <entry key="2" value="two"></entry>
+            </map>
+        </property>
+        <property name="properties">
+            <props>
+                <prop key="user">root</prop>
+                <prop key="password">root</prop>
+                <prop key="jdbcUrl">jdbc:mysql:///test</prop>
+                <prop key="driverClass">com.mysql.jdbc.Driver</prop>
+            </props>
+        </property>
+    </bean>
+
+    <bean id="car" class="com.hhu.spring.beans.Car">
+        <constructor-arg value="BMW"></constructor-arg>
+        <constructor-arg value="Shanghai"></constructor-arg>
+        <constructor-arg value="5000.0" type="double"></constructor-arg>
+    </bean>
+
+    <bean id="car2" class="com.hhu.spring.beans.Car">
+        <constructor-arg>
+            <value><![CDATA[<Audi]]></value>
+        </constructor-arg>
+        <constructor-arg value="Beijing"></constructor-arg>
+        <constructor-arg value="4000" type="int"></constructor-arg>
+    </bean>
+
+    <util:list id="cars">
+        <ref bean="car"/>
+        <ref bean="car2"/>
+    </util:list>
+
+    <bean id="dataSource" class="com.hhu.spring.beans.DataSource">
+        <property name="properties">
+            <props>
+                <prop key="user">root</prop>
+                <prop key="password">root</prop>
+                <prop key="jdbcUrl">jdbc:mysql:///test</prop>
+                <prop key="driverClass">com.mysql.jdbc.Driver</prop>
+            </props>
+        </property>
+    </bean>
+
+</beans>

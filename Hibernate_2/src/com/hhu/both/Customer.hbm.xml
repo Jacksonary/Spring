@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.hhu.both.Customer" table="CUSTOMERS">
+        <id name="CId" type="int">
+            <column name="CID"/>
+            <generator class="native"/>
+        </id>
+        <property name="CName" type="string">
+            <column name="CNAME"/>
+        </property>
+
+        <!--映射一对多的集合属性-->
+        <set name="orders" table="orders">
+            <key column="CUSTOMER_ID"></key>
+            <one-to-many class="com.hhu.both.Order"/>
+        </set>
+
+    </class>
+</hibernate-mapping>
